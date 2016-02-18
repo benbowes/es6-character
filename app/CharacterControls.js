@@ -48,7 +48,7 @@ export default class CharacterControls {
 	REPORT() {
 		const pos = this.character.getPosition();
 		const facing = this.character.getFacing();
-		return pos.x + ',' + pos.y + ',' + facing; // X,Y,F
+		return `${pos.x},${pos.y},${facing}`; // position X, positionY, Direction
 	}
 
 	RESET() {
