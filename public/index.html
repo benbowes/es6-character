@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+  <title>Browser Tester</title>
+  <style>
+    body{
+      font: 14px/1.4 'Helvetica Neue', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <p>&darr;&darr;&darr; Check the console &darr;&darr;&darr;</p>
+  <script>
+    console.group("Testing in your browser console can be done using the following commands:");
+    console.info("characterControls.addInstruction('PLACE 0,0,NORTH');");
+    console.info("characterControls.addInstruction('MOVE');");
+    console.info("characterControls.addInstruction('LEFT');");
+    console.info("characterControls.addInstruction('RIGHT');");
+    console.info("characterControls.addInstruction('REPORT'); // X,Y,F");
+    console.info("characterControls.addInstruction('RESET'); // Resets character back to initial state");
+    console.groupEnd();
+  </script>
+  <!-- bundle.js requires you to `npm run in_browser` -->
+  <script src="public/bundle.js"></script>
+</body>
+</html>

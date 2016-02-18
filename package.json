@@ -1,0 +1,36 @@
+{
+	"name": "character",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://bitbucket.org/benbowes/character.git"
+	},
+	"description": "Character Test",
+	"main": "characterTest.js",
+	"scripts": {
+		"in_browser": "npm run compile && npm run open_browser && npm run hapi_server",
+		"test": "npm run unit_tests && npm run coverage && npm run lint && npm run open_coverage_report",
+		"start": "npm run in_browser",
+		"lint": "eslint app/*.js tests/**/*.js",
+		"open_browser": "open http://localhost:8003",
+		"compile": "node_modules/.bin/browserify characterTest.js -t babelify -o public/bundle.js",
+		"hapi_server": "node server.js",
+		"unit_tests": "node_modules/.bin/mocha --compilers js:node_modules/babelify/node_modules/babel-core/register tests/unit/characterTest-spec.js",
+		"coverage": "node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha tests/unit/*.js -- -R spec",
+		"open_coverage_report": "open coverage/lcov-report/index.html"
+	},
+	"author": "Ben Bowes",
+	"license": "MIT",
+	"devDependencies": {
+		"babel-eslint": "4.1.x",
+		"babel-istanbul": "0.4.x",
+		"babelify": "6.4.x",
+		"browserify": "11.1.x",
+		"eslint": "1.6.x",
+		"hapi": "10.5.x",
+		"inert": "3.1.x",
+		"istanbul": "0.4.x",
+		"mocha": "2.3.x",
+		"mochify": "2.13.x"
+	}
+}
